@@ -3,7 +3,11 @@ const dotenv = require('dotenv');
 const db = require('./database/db');
 const bodyParser = require('body-parser');
 const AuthRoutes = require('./routes/AuthRoutes');
-
+const User = require('./models/User');
+const LinksCategory = require('./models/LinksCategory');
+const Links = require('./models/Links');
+const TasksCategory = require('./models/TasksCategory');
+const Tasks = require('./models/Tasks');
 
 
 dotenv.config();
