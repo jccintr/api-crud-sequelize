@@ -23,7 +23,7 @@ module.exports = {
            return res.status(400).json({error:'Nome de usuário e ou senha inválidos.'});
         }
 
-        const token = jsonwebtoken.sign({userId: user._id},process.env.JWT_SECRET);
+        const token = jsonwebtoken.sign({userId: user.id},process.env.JWT_SECRET);
         return res.status(200).json({token: token});
      },
 
