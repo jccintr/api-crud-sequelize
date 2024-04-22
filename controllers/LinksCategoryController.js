@@ -31,6 +31,25 @@ module.exports = {
         return res.status(200).json(newlinksCategory);
 
     },
+
+    show: async (req,res,next) => {
+        const {userId} = req.body;
+        const categoryId = req.params.id;
+
+        const category = await LinksCategory.findByPk(categoryId);
+        
+        if(!category) {
+            return res.status(404).json({error: 'Categoria não encontrada.'});
+        }
+        
+        if(category.userId !== userId){
+            return res.status(403).json({error: 'Acesso ao recurso não autorizado.'});
+        }
+
+        return res.status(200).json(category);
+
+    },
+
     update: async (req,res,next) => {
         const {userId,name} = req.body;
         const categoryId = req.params.id;
