@@ -4,6 +4,7 @@ const db = require('./database/db');
 const bodyParser = require('body-parser');
 const AuthRoutes = require('./routes/AuthRoutes');
 const LinksCategoryRoutes = require('./routes/LinksCategoryRoutes');
+const TasksCategoryRoutes = require('./routes/TasksCategoryRoutes');
 const User = require('./models/User');
 const LinksCategory = require('./models/LinksCategory');
 const Links = require('./models/Links');
@@ -30,6 +31,7 @@ app.use(bodyParser.json());
 
 app.use(AuthRoutes);
 app.use(LinksCategoryRoutes);
+app.use(TasksCategoryRoutes);
 
 app.get('/', function(req, res) {
     res.send('JC CRUD API SEQUELIZE POSTGRES');
