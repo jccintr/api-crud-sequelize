@@ -15,7 +15,7 @@ const TasksCategory = require('./models/TasksCategory');
 const Task = require('./models/Task');
 
 
-dotenv.config();
+dotenv.config({force:true});
 
 
 try {
