@@ -1,6 +1,8 @@
 const { DataTypes } = require('sequelize');
 const db = require('../database/db');
 
+
+
 const User = db.define('users', {
   
     name: {
@@ -18,11 +20,6 @@ const User = db.define('users', {
       }
   });
 
-  
 
-  // (async () => {
-  //   await User.sync({ force: true });
-  //   // Code here
-  // })();
 
   module.exports = User;

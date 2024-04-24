@@ -28,7 +28,7 @@ module.exports = {
 
         const newlinksCategory = await LinksCategory.create({ name: name, userId: userId });
 
-        return res.status(200).json(newlinksCategory);
+        return res.status(201).json(newlinksCategory);
 
     },
 

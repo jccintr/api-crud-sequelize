@@ -4,22 +4,26 @@ const User = require('./User');
 const TasksCategory = require('./TasksCategory');
 
 
-const Tasks = db.define('tasks', {
+const Task = db.define('tasks', {
   
     descricao: {
       type: DataTypes.STRING,
       allowNull: false
     },
     isDone: {
-        type: DataTypes.BOOLEAN
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
         
       },
     
   });
 
-  Tasks.belongsTo(User);
-  Tasks.belongsTo(TasksCategory);
+  Task.belongsTo(User);
+  User.hasMany(Task);
 
+
+  Task.belongsTo(TasksCategory);
+  TasksCategory.hasMany(Task);
  
 
-  module.exports = Tasks;
+  module.exports = Task;

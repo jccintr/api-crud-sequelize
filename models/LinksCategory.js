@@ -13,6 +13,7 @@ const LinksCategory = db.define('links_category', {
   });
 
   LinksCategory.belongsTo(User);
+  User.hasMany(LinksCategory);
 
  
 

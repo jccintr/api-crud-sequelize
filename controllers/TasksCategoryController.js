@@ -28,7 +28,7 @@ module.exports = {
 
         const newTasksCategory = await TasksCategory.create({ name: name, userId: userId });
 
-        return res.status(200).json(newTasksCategory);
+        return res.status(201).json(newTasksCategory);
 
     },
 

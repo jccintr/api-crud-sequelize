@@ -14,8 +14,10 @@ const Links = db.define('links', {
   });
 
   Links.belongsTo(User);
-  Links.belongsTo(LinksCategory);
+  User.hasMany(Links);
 
+  Links.belongsTo(LinksCategory);
+  LinksCategory.hasMany(Links);
  
 
   module.exports = LinksCategory;
